@@ -1,6 +1,5 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import SpatialNavigation from 'vue-spatial-nav/lib/spatial_navigation'
 
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
