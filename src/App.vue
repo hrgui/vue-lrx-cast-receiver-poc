@@ -5,13 +5,13 @@ import { RouterLink, RouterView } from 'vue-router'
 <template>
   <header>
     <div class="wrapper">
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/browse">Browse</RouterLink>
-        <RouterLink to="/history">History</RouterLink>
-        <RouterLink to="/search">Search</RouterLink>
-        <RouterLink to="/watchlist">Watchlist</RouterLink>
-        <RouterLink to="/settings">Settings</RouterLink>
+      <nav v-focus-section:menu>
+        <RouterLink to="/" v-focus>Home</RouterLink>
+        <RouterLink to="/browse" v-focus>Browse</RouterLink>
+        <RouterLink to="/history" v-focus>History</RouterLink>
+        <RouterLink to="/search" v-focus>Search</RouterLink>
+        <RouterLink to="/watchlist" v-focus>Watchlist</RouterLink>
+        <RouterLink to="/settings" v-focus>Settings</RouterLink>
       </nav>
     </div>
   </header>
