@@ -4,8 +4,7 @@ import { RouterLink, RouterView } from 'vue-router'
 
 const isMenuFocused = ref(false)
 
-function onFocusMenu(e) {
-  console.log('menu focused', e)
+function onFocusMenu() {
   isMenuFocused.value = true
 }
 
@@ -24,19 +23,49 @@ function onFocusMenuLeft() {
           '@asvw:w-[300px] fixed left-0 bg-gray-500': isMenuFocused,
           '@asvw:w-[64px]': !isMenuFocused
         }"
-        v-focus-section:menu
-        v-focus-events="{ focused: onFocusMenu, unfocused: onFocusMenuLeft }"
+        v-focus-section:nav-menu="{
+          enterTo: 'default-element',
+          defaultElement: '.router-link-active'
+        }"
+        v-focus-events="{
+          focused: onFocusMenu,
+          unfocused: onFocusMenuLeft
+        }"
       >
-        <RouterLink to="/" v-focus>Home</RouterLink>
-        <RouterLink to="/browse" v-focus>Browse</RouterLink>
-        <RouterLink to="/history" v-focus>History</RouterLink>
-        <RouterLink to="/search" v-focus>Search</RouterLink>
-        <RouterLink to="/watchlist" v-focus>Watchlist</RouterLink>
-        <RouterLink to="/settings" v-focus>Settings</RouterLink>
+        <RouterLink v-slot="{ isActive }" to="/" v-focus>
+          <div :class="{ 'current-link text-white': isActive, 'text-gray-300': !isActive }">
+            Home
+          </div>
+        </RouterLink>
+        <RouterLink v-slot="{ isActive }" to="/browse" v-focus>
+          <div :class="{ 'current-link text-white': isActive, 'text-gray-300': !isActive }">
+            Browse
+          </div>
+        </RouterLink>
+        <RouterLink v-slot="{ isActive }" to="/history" v-focus>
+          <div :class="{ 'current-link text-white': isActive, 'text-gray-300': !isActive }">
+            History
+          </div>
+        </RouterLink>
+        <RouterLink v-slot="{ isActive }" to="/search" v-focus>
+          <div :class="{ 'current-link text-white': isActive, 'text-gray-300': !isActive }">
+            Search
+          </div>
+        </RouterLink>
+        <RouterLink v-slot="{ isActive }" to="/watchlist" v-focus>
+          <div :class="{ 'current-link text-white': isActive, 'text-gray-300': !isActive }">
+            Watchlist
+          </div>
+        </RouterLink>
+        <RouterLink v-slot="{ isActive }" to="/settings" v-focus>
+          <div :class="{ 'current-link text-white': isActive, 'text-gray-300': !isActive }">
+            Settings
+          </div>
+        </RouterLink>
       </nav>
       <div
         :class="{
-          '@asvw:pl-[300px]': isMenuFocused,
+          '@asvw:pl-[348px]': isMenuFocused,
           '@asvw:pl-[64px]': !isMenuFocused
         }"
       >
