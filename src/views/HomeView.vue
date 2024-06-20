@@ -5,7 +5,7 @@ import type SpatialNavigation from 'vue-spatial-nav/lib/spatial_navigation'
 
 const spatialNavigation = inject('spatialNavigation') as SpatialNavigation
 
-function print(e) {
+function print(e: any) {
   console.log(e)
 }
 
