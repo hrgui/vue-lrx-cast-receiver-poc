@@ -21,7 +21,7 @@ onBeforeRouteLeave(() => {
 <template>
   Home
   <div id="home" v-focus-section:home style="display: flex">
-    <div class="first" v-focus v-focus-events="{ willmove: print }">
+    <div class="@asvw:w-[200px]" v-focus v-focus-events="{ willmove: print }">
       <div>Test</div>
     </div>
     <div v-focus v-focus-events="{ willmove: print }">
