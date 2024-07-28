@@ -27,8 +27,8 @@ onBeforeRouteLeave(() => {
     <div v-focus v-focus-events="{ willmove: print }">
       <div>Test 2</div>
     </div>
-    <div v-focus v-focus-events="{ willmove: print }">
+    <a href="https://www.google.com" v-focus v-focus-events="{ willmove: print }">
       <div>Test 3</div>
-    </div>
+    </a>
   </div>
 </template>

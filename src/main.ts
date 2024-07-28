@@ -14,3 +14,6 @@ app.use(router)
 app.use(vueSpatialNavigation, { enterTo: 'last-focused' })
 
 app.mount('#app')
+
+const context = cast.framework.CastReceiverContext.getInstance()
+context.start({ disableIdleTimeout: true })
